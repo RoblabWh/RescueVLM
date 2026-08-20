@@ -46,4 +46,4 @@ The robotics lab researches autonomous systems, rescue robotics, and machine lea
  
 - Westfälische Hochschule, Aug 17, 2026: [Vom Kinderwagen zur mobilen Katastrophenhilfe: KI-Station unterstützt Einsatzkräfte](https://www.w-hs.de/pressemedien/nachrichten-lesen/news/detail/News/vom-kinderwagen-zur-mobilen-katastrophenhilfe-ki-station-unterstuetzt-einsatzkraefte/)
 - WAZ: [Mit dem Kinderwagen ins Krisengebiet: Gelsenkirchener Studenten bauen KI-Station](https://www.waz.de/lokales/gelsenkirchen/article412894638/mit-dem-kinderwagen-ins-krisengebiet-gelsenkirchener-studenten-bauen-ki-station.html)
- 
+- Regionalverband Ruhr [Westfälische Hochschule entwickelt mobile KI-Station für die Katastrophenhilfe](https://www.rvr.ruhr/news/startseite-news/news/westfaelische-hochschule-entwickelt-mobile-ki-station-fuer-die-katastrophenhilfe/)
