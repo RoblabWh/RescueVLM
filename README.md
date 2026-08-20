@@ -36,7 +36,7 @@ After a flood, a wildfire, or a building collapse, drones are often the first so
  
 ## Built for the field: the solar-powered AI ground station
  
-RescueVLM is the heart of a mobile, solar-powered ground station developed in the robotics lab of [Westfälische Hochschule](https://www.w-hs.de/) (Westphalian University of Applied Sciences) in Gelsenkirchen, Germany, led by Prof. Dr.-Ing. Hartmut Surmann. Built from a modified off-the-shelf stroller chassis, a gaming laptop, a battery, and a solar panel, the station generates its own power, sets up its own local Wi-Fi, and provides capable on-site compute for AI-based drone image analysis.
+RescueVLM is the heart of a mobile, solar-powered ground station developed in the [robotics lab of Westfälische Hochschule](https://github.com/RoblabWh) (Westphalian University of Applied Sciences) in Gelsenkirchen, Germany, led by Prof. Dr.-Ing. Hartmut Surmann. Built from a modified off-the-shelf stroller chassis, a gaming laptop, a battery, and a solar panel, the station generates its own power, sets up its own local Wi-Fi, and provides capable on-site compute for AI-based drone image analysis.
  
 A motorized wheel, combined with GPS, compass, and sensor data, automatically turns the solar panel toward the sun — yielding around 40&nbsp;% more energy than a fixed panel — while the folding chassis fits into a car and its suspended wheels handle rough terrain.
  
