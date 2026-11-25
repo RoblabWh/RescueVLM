@@ -34,6 +34,37 @@ After a flood, a wildfire, or a building collapse, drones are often the first so
 3. **Triage** — RescueVLM queries the configured vision-language model about the imagery using its built-in domain prompts.
 4. **Review** — the most relevant frames are surfaced first, critical regions are highlighted, and every rating comes with a human-readable explanation. The full dataset remains accessible throughout.
  
+## Setup
+
+**Prerequisites**
+
+- [Node.js](https://nodejs.org/) ≥ 20
+- [Ollama](https://ollama.com/) with at least one vision-capable model, e.g. `ollama pull gemma4:31b` (our field configuration, validated on a 32 GB RTX 5090) — smaller models such as `gemma3:4b` work on modest hardware
+- `ffmpeg` on your `PATH` (only needed for video frame extraction): `sudo apt install ffmpeg` (Debian/Ubuntu), `sudo pacman -S ffmpeg` (Arch), or `brew install ffmpeg` (macOS)
+
+**Install and run**
+
+```bash
+git clone https://github.com/RoblabWh/RescueVLM.git
+cd RescueVLM
+npm install
+cp .env.example .env.local   # defaults point to a local Ollama on localhost:11434
+npm run dev
+```
+
+Open <http://localhost:3000>, pick a model from the dropdown, and choose a photo, a folder of images, or a video. Every installed Ollama vision model is listed automatically.
+
+For a production build use `npm run build && npm start`.
+
+**Configuration** (`.env.local`)
+
+| Variable | Purpose |
+|---|---|
+| `OLLAMA_BASE_URL` | Ollama endpoint (default `http://localhost:11434`). For a remote host, start Ollama there with `OLLAMA_HOST=0.0.0.0:11434 ollama serve`. |
+| `OLLAMA_API_KEY` | Optional; only if your Ollama endpoint requires auth |
+| `LLAMACPP_BASE_URL` / `LLAMACPP_API_KEY` | Optional [llama.cpp](https://github.com/ggml-org/llama.cpp) `llama-server` backend (OpenAI-compatible) |
+| `OPENROUTER_API_KEY` | Optional cloud provider for development — imagery leaves the device, do not use during operations |
+
 ## Built for the field: the solar-powered AI ground station
  
 RescueVLM is the heart of a mobile, solar-powered ground station developed in the [robotics lab of Westfälische Hochschule](https://github.com/RoblabWh) (Westphalian University of Applied Sciences) in Gelsenkirchen, Germany, led by Prof. Dr.-Ing. Hartmut Surmann. Built from a modified off-the-shelf stroller chassis, a gaming laptop, a battery, and a solar panel, the station generates its own power, sets up its own local Wi-Fi, and provides capable on-site compute for AI-based drone image analysis.
@@ -48,3 +79,22 @@ The robotics lab researches autonomous systems, rescue robotics, and machine lea
 - Westdeutsche Allgemeine Zeitung WAZ: [Mit dem Kinderwagen ins Krisengebiet: Gelsenkirchener Studenten bauen KI-Station](https://www.waz.de/lokales/gelsenkirchen/article412894638/mit-dem-kinderwagen-ins-krisengebiet-gelsenkirchener-studenten-bauen-ki-station.html)
 - Regionalverband Ruhr: [Westfälische Hochschule entwickelt mobile KI-Station für die Katastrophenhilfe](https://www.rvr.ruhr/news/startseite-news/news/westfaelische-hochschule-entwickelt-mobile-ki-station-fuer-die-katastrophenhilfe/)
 - Neue Gladbecker Zeitung: [KI-Station aus Kinderwagen hilft Einsatzkräften in Krisengebieten](https://neue-gladbecker-zeitung.de/ki-station-aus-kinderwagen-hilft-einsatzkraeften-in-krisengebieten/)
+
+## Citation
+
+If you use this code in your research, please cite:
+
+```bibtex
+@inproceedings{voigt_rescuevlm_2026,
+  author      = {Voigt, Niklas and Sibum, Tim and Meine, Julien and Digakis, Niklas and Surmann, Hartmut},
+  title       = {{RescueVLM}: Model-Agnostic Vision-Language Framework for Rescue Drone Imagery},
+  booktitle   = {2026 {IEEE} International Symposium on Safety, Security, and Rescue Robotics ({SSRR})},
+  eventdate   = {2026-11-02/2026-11-04},
+  venue       = {Incheon, Korea},
+  publisher   = {IEEE},
+  date        = {2026},
+  eprint      = {2611.18813},
+  eprinttype  = {arxiv},
+  eprintclass = {cs.CV},
+}
+```
